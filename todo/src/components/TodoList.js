@@ -2,12 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const TodoList = props => {
-  console.log(props)
   const { todos } = props
   return (
     <ul>
-      {todos.length ? (
-        todos.map(todo => <li>{todo}</li>)
+      {todos ? (
+        todos.map((todo, i) => <li key={i}>{todo.todo}</li>)
       ) : (
         <li>You don't have anything to do.</li>
       )}
