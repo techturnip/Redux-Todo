@@ -6,9 +6,11 @@ const TodoList = props => {
   const { todos } = props
   return (
     <ul>
-      {todos.map(todo => (
-        <li>{todo}</li>
-      ))}
+      {todos.length ? (
+        todos.map(todo => <li>{todo}</li>)
+      ) : (
+        <li>You don't have anything to do.</li>
+      )}
     </ul>
   )
 }
