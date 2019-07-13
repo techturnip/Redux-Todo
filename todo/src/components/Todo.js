@@ -14,9 +14,15 @@ class Todo extends Component {
     console.log(todo)
 
     return (
-      <li className={`card flex${todo.completed ? ' completed' : ''}`}>
+      <li
+        className={`card flex${
+          todo.completed ? ' teal lighten-2 completed' : ''
+        }`}
+      >
         <span>{todo.todo}</span>
-        <Button onClick={this.handleClick}>Complete</Button>
+        <Button onClick={this.handleClick}>
+          {!todo.completed ? 'Complete' : 'Undo'}
+        </Button>
       </li>
     )
   }
