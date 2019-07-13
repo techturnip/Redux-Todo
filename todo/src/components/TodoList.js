@@ -1,4 +1,5 @@
 import React from 'react'
+import Todo from './Todo'
 import { connect } from 'react-redux'
 
 const TodoList = props => {
@@ -6,7 +7,7 @@ const TodoList = props => {
   return (
     <ul>
       {todos ? (
-        todos.map((todo, i) => <li key={i}>{todo.todo}</li>)
+        todos.map((todo, i) => <Todo key={i} todoId={i} />)
       ) : (
         <li>You don't have anything to do.</li>
       )}
