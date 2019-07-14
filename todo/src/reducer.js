@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_COMPLETED } from './actions'
+import { ADD_TODO, TOGGLE_COMPLETED, CLEAR_COMPLETED } from './actions'
 
 // all state values need an initial value
 const initialState = {
@@ -20,12 +20,19 @@ export default function(state = initialState, action) {
       const todoList = state.todos.map(todo => todo)
       todoList[id].completed = !bool
 
-      console.log(todoList)
-
       return {
         ...state,
         todos: todoList
       }
+    case CLEAR_COMPLETED:
+      const clearedList = state.todos.filter(todo => !todo.completed)
+      console.log(clearedList)
+
+      return {
+        ...state,
+        todos: clearedList
+      }
+
     default:
       return state
   }

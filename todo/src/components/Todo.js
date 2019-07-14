@@ -11,7 +11,6 @@ class Todo extends Component {
 
   render() {
     const todo = this.props.todos[this.props.todoId]
-    console.log(todo)
 
     return (
       <li

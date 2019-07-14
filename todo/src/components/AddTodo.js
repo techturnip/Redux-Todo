@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'react-materialize'
+import { Button, Icon, TextInput } from 'react-materialize'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
@@ -32,9 +32,11 @@ class AddTodo extends Component {
   render() {
     const { todo } = this.state
     return (
-      <div>
+      <div className="card">
+        <h5>Add Todo:</h5>
+
         <form onSubmit={this.submitHandler}>
-          <input
+          <TextInput
             type="text"
             name="todo"
             placeholder="Add a todo"
